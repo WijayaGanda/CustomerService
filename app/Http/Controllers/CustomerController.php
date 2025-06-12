@@ -52,8 +52,8 @@ class CustomerController extends Controller
     {
         $customer = Customer::find($id);
 
-        $orders = Http::get('http://127.0.0.1:8002/api/orders-api')->json()['data'];
-        $products = Http::get('http://127.0.0.1:8001/api/products-api')->json()['data'];
+        $orders = Http::get('http://nginx-order/api/orders-api')->json()['data'];
+        $products = Http::get('http://nginx-product/api/products-api')->json()['data'];
 
         $orders = collect($orders);
         $products = collect($products);
